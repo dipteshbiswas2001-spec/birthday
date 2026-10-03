@@ -1020,10 +1020,12 @@
  }
 
  .Lbtn {
-   position: relative !important;
-   /* stop overlapping the cube */
-   bottom: auto !important;
-   margin-top: 12px;
+   position: absolute !important;
+   left: 50%;
+   bottom: max(20px, calc(env(safe-area-inset-bottom, 0px) + 16px)) !important;
+   translate: -50% 0;
+   margin: 0;
+   z-index: 2100;
  }
 
  @media (max-width: 600px) {
@@ -1114,8 +1116,7 @@
    box-shadow: none;
  }
 
- #photoGalleryWrap.show .gallery-ui,
- #photoGalleryWrap.show #LastBtnFinal {
+ #photoGalleryWrap.show .gallery-ui {
    display: none !important;
  }
 

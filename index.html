@@ -104,8 +104,8 @@
       </div>
 
       <!-- sabse neeche Lbtn -->
-      <button class="Lbtn" id="LastBtnFinal" onclick="openLastCake()" style="display:none;" aria-label="Final Message">
-        <span class="btn-inner">Final Message</span>
+      <button class="Lbtn" id="LastBtnFinal" style="display:none;" aria-label="Next Page">
+        <span class="btn-inner">Next Page</span>
       </button>
 
     </div>
@@ -154,6 +154,7 @@
         const startBtnContainer = document.getElementById('start-btn-container'); // optional
         const prevBtn = document.getElementById('prevImg');
         const nextBtn = document.getElementById('nextImg');
+        const pageBtn = document.getElementById('LastBtnFinal');
         const faceRotations = [
           { face: 'rotateY(0deg)', x: 0, y: 0 },
           { face: 'rotateY(90deg)', x: 0, y: -90 },
@@ -252,6 +253,7 @@
         // attach UI clicks if present
         if (nextBtn) nextBtn.addEventListener('click', next);
         if (prevBtn) prevBtn.addEventListener('click', prev);
+        if (pageBtn) pageBtn.addEventListener('click', () => window.openLastCake());
 
         // Wheel changes one photo per gesture burst.
         let wheelTimeout;
